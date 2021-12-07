@@ -12,7 +12,7 @@ class UserCreateForm(FlaskForm):
     weight = FloatField('체중(kg)', validators=[DataRequired()])
 
 class UserLoginForm(FlaskForm):
-    user_id = StringField('ID', validators=[DataRequired(), Length(min=4, max=20)])
-    password = PasswordField('PW', validators=[DataRequired()])
+    user_id = StringField('ID', validators=[DataRequired('아이디는 필수 입력 항목입니다.'), Length(min=4, max=20)])
+    password = PasswordField('PW', validators=[DataRequired('비밀번호는 필수 입력 항목입니다.')])
 
 

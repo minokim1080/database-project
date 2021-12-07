@@ -20,7 +20,7 @@ def signup():
                     age=form.age.data,
                     height=form.height.data,
                     weight=form.weight.data,
-                    bmi=float(form.weight.data/(form.height.data**2)))
+                    bmi=float(form.weight.data/((form.height.data**2)/10000)))
             db.session.add(user)
             db.session.commit()
             return redirect(url_for('main.index'))
