@@ -6,7 +6,8 @@
     </head>
     <body>
         {% block content %}
-        <form method="POST" action="/login">
+        <form method="post">
+		{{ form.csrf_token }}
             <div class="login_box box1">
 		        <img src="{{ url_for('static', filename='img/login/login_user.png') }}" width="25px" height="25px">
                 {{form.user_id(class="login_form", placeholder="아이디")}}
@@ -15,11 +16,9 @@
                 <img src="{{ url_for('static', filename='img/login/login_padlock.png') }}" width="25px" height="25px">
                 {{form.password(class="login_form", placeholder="비밀번호")}}
             </div>
-	        <a href="{{ url_for('select.selection')}}">
-                <button type="button" class="login_btn btn1">
+                <button type="submit" class="login_btn btn1">
                     로 그 인
                 </button>
-            </a>
             <div class="login_or">or</div>
 	        <a href="{{ url_for('auth.signup')}}">
                 <button type="button" class="login_btn btn2">
