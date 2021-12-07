@@ -1,0 +1,127 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    height: 100%
+}
+/* signup */
+.signup_form {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.signup_title {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.signup_id {
+    position:absolute;
+    top: 90px;
+    left:30px;
+}
+.signup_pw {
+    position:absolute;
+    top: 130px;
+    left:30px;
+}
+.signup_checkPw {
+    position:absolute;
+    top: 170px;
+    left:30px;
+}
+.signup_basicInfo {
+    position:absolute;
+    top: 220px;
+    left:20px;
+}
+.signup_gender {
+    position:absolute;
+    top: 270px;
+    left:30px;
+}
+.signup_age {
+    position:absolute;
+    top: 310px;
+    left:30px;
+}
+.signup_height {
+    position:absolute;
+    top: 350px;
+    left:30px;
+}
+.signup_weight {
+    position:absolute;
+    top: 390px;
+    left:30px;
+}
+.signup_btn{
+    position: absolute;
+    top: 460px;
+    left: 50px;
+}
+
+/*selectColor*/
+.selectColor_body{
+    position: relative;
+}
+.selectColor_form{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.selectColor_title {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.selectColor_color1{
+    position: absolute;
+    top: 135px;
+    left: 160px;
+}
+.selectColor_color2{
+    position: absolute;
+    top: 255px;
+    left: 160px;
+}
+.selectColor_imgTop{
+    position: absolute;
+    top: 120px;
+    left: 70px;
+}
+.selectColor_imgBottom{
+    position: absolute;
+    top: 240px;
+    left: 70px;
+}
+.selectColor_btn{
+    position: absolute;
+    top: 370px;
+    left: 100px;
+}
+
+/* result */
+.result_frame{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.result_images{
+    position: absolute;
+    top: 100px;
+    left: 10px;
+}
+.result_text{
+    position: absolute;
+    top: 350px;
+    left: 30px;
+}
+
+

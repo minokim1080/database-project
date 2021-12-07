@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/location2.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style2.css') }}"/>
+    <title>signup</title>
+</head>
+<body id="signup_body">
+    <form class="signup_form" action="" method="post">
+	    {{ form.csrf_token }}
+	    {% for field, errors in form.errors.items() %}
+	    <div role="alert">
+		    <strong>{{ form[field].label }}</strong>: {{','.join(errors) }}
+	    </div>
+	    {% endfor %}
+        <h1 class="signup_title">회원가입</h1>
+        
+        <!-- id : lable의 for랑 연결된 부분 / name은 다른 파일로 넘겨줄 파라미터 명 -->
+        <div class="signup_id">
+		<label class="signup_label" for="user_id"> {{ form.user_id.label }} </label>
+		<input class="signup_inputBox" type="text" id="user_id" name="user_id" value="{{ form.user_id.data or '' }}"  size="20" required>
+            <input class="signup_CheckIdBtn" type="button" name="checkId" value="중복확인">
+        </div>
+        <div class="signup_pw">
+		<label class="signup_label" for="password1"> {{ form.password1.label }} </label>
+		<input class="signup_inputBox" type="password" id="password1" name="password1" value="{{ form.password1.data or '' }}" size="20" required>
+        </div>
+        <div class="signup_checkPw">
+            <label class="signup_label" for="password2">비밀번호 확인</label>
+	    <input class="signup_inputBox" type="password" id="password2" name="password2" value="{{ form.password2.data or '' }}" size="20" required>
+        </div>
+        <div class="signup_basicInfo">
+            <hr class>
+            <h2 class>기본 정보</h2>
+            <hr class>
+        </div>
+        <div class="signup_gender"> 
+            <h2 class="signup_h2">성별</h2>
+            <!-- name-value 형식으로 서버에 전달됨 -->
+	    <input class="signup_inputBox" type="text" id="gender" name="gender" value="{{ form.gender.data or '' }}" size="20" required>
+
+        </div>
+        <div class="signup_age"> 
+            <h2 class="signup_h2">나이</h2>
+	    <select class="signup_selectBox" name="age" value="{{ form.age.data or ''}}">
+		    <option value="">---------선택---------</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+            </select>
+        </div>
+        <div class="signup_height">
+            <h2 class="signup_h2">키(cm)</h2>
+	    <input class="signup_inputBox" type="number" name="height" value="{{ form.height.data or ''}}">
+        </div>
+        <div class="signup_weight">
+            <h2 class="signup_h2">체중(kg)</h2>
+	    <input class="signup_inputBox" type="number" name="weight" value="{{ form.weight.data or ''}}">
+        </div>
+        
+
+	<button class="signup_btn" type="submit">가입하기</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tempCal.css') }}"/>
+    <title>tempCalendar</title>
+</head>
+<body>
+    <div class="tempCal_calendar">
+        <h1>외출 날짜를 선택해주세요</h1>
+        <div class="tempCal_header">
+            <div class="tempCal_nav">
+                <button class="tempCal_navbtn prevbtn" onclick="prevMonth()">&lt;</button>
+                <button class="tempCal_navbtn todaybtn" onclick="goToday()">이번달</button>
+                <button class="tempCal_navbtn nextbtn" onclick="nextMonth()">&gt;</button>
+            </div>
+            <div class="tempCal_yearmonth"></div>
+	    <a href="{{ url_for('select.location') }}">
+                <button class="tempCal_next">장소선택</button>
+            </a>
+        </div>
+        <div class="tempCal_main">
+            <div class="tempCal_days">
+                <div class="tempCal_day">일</div>
+                <div class="tempCal_day">월</div>
+                <div class="tempCal_day">화</div>
+                <div class="tempCal_day">수</div>
+                <div class="tempCal_day">목</div>
+                <div class="tempCal_day">금</div>
+                <div class="tempCal_day">토</div>
+            </div>
+            <div class="tempCal_dates"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/tempCal.js') }}"></script>
+</body>
+</html>

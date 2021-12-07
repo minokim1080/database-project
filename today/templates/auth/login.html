@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/location.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+        <title>login</title>
+    </head>
+    <body id="login_body">
+        <form class="login_form">
+            <div class="login_logobox">
+		    <img src="{{ url_for('static', filename='img/login/login_logo.png') }}" class="login_logo">
+            </div>
+            <h1>오늘 패션 어때</h1>
+            <div class="login_idForm">
+		    <img src="{{ url_for('static', filename='img/login/login_user.png') }}" width="25px" height="25px">
+                <input type="text" class="login_id" placeholder="아이디">
+            </div>
+            <div class="login_passForm">
+		    <img src="{{ url_for('static', filename='img/login/login_padlock.png') }}" width="25px" height="25px">
+                <input type="password" class="login_pw" placeholder="비밀번호">
+            </div>
+	    <a href="{{ url_for('select.selection')}}">
+                <button type="button" class="login_btn1" onclick="button()">
+                    로 그 인
+                </button>
+            </a>
+            <div class="login_or">or</div>
+	    <a href="{{ url_for('auth.signup')}}">
+                <button type="button" class="login_btn2" onclick="button()">
+                    회 원 가 입
+                </button>
+            </a>
+        </form>
+	<script src="{{ url_for('static',filename='js/login.js') }}">
+            //function findId(){} 아이디, 비번 비교
+            //function sendMsg(){} 틀렸으면 재입력 메세지
+        </script>
+      </body>
+</html>

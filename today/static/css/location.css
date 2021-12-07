@@ -1,0 +1,146 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    height: 100%
+}
+/* main */
+.main_bg{
+    position: absolute;
+    top: 0px;
+}
+#main_logo{ 
+    position: fixed;
+    top: 400px;
+    left: 605px;
+}
+#main_touch{
+    position:fixed;
+    top: 600px;
+    left: 680px;
+}
+/* login */
+.login_form{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.login_logobox{
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.login_form h1{
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.login_idForm{
+    position: absolute;
+    top: 170px;
+}
+.login_idForm img{
+    position: absolute;
+    left: 40px;
+}
+.login_id{
+    position: absolute;
+    top: 5px;
+    left: 75px;
+}
+.login_passForm{
+    position: absolute;
+    top: 230px;
+}
+.login_passForm img{
+    position: absolute;
+    left: 40px;
+}
+.login_pw{
+    position: absolute;
+    top: 5px;
+    left: 75px;
+}
+.login_passForm p{
+    position: relative;
+    top: 60px;
+    left: 50px;
+}
+.login_btn1{
+    position: absolute;
+    top: 330px;
+}
+.login_or{
+    position: absolute;
+    top: 380px;
+    left: 25px;
+}
+.login_or::before{
+    position: relative;
+}
+.login_or::after{
+    position: relative;
+}
+.login_btn2{
+    position: absolute;
+    top: 340px;
+}
+/* sel */
+#sel_tempbox{
+    position: absolute;
+    top: 200px;
+    left: 5px;
+}
+#sel_colbox{
+    position: absolute;
+    top: 200px;
+    right: 5px;
+}
+.sel_catename{
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.sel_cateinfo{
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.sel_img{
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+/* tempCal */
+.tempLoc_map{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.tempLoc_header h1{
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.tempLoc_ment{
+    position: absolute;
+    top: 80px;
+    left: 10px;
+}
+.tempLoc_sel{
+    position: absolute;
+    top: 74px;
+    left: 128px;
+}
+.tempLoc_header button{
+    position: absolute;
+    top: 80px;
+    right: 10px;
+}

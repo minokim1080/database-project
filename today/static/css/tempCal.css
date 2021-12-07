@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+*{
+    font-family: 'Noto Sans KR';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #5680EB;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.tempCal_calendar {
+    width: 600px;
+    height: 650px;
+    margin: 50px;
+    background-color: #FFFFFF;
+    text-align: center;
+    border-radius: 15px;
+    position: absolute;
+}
+.tempCal_calendar h1{
+    text-align: center;
+    position: relative;
+    top: 50px;
+}
+.tempCal_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 60px;
+}
+.tempCal_yearmonth {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    left: -15px;
+}
+.tempCal_next{
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+    top: 10px;
+    right: 50px;
+}
+.tempCal_nav {
+    display: flex;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    position: relative;
+    top: 10px;
+    left: 50px;
+}
+.tempCal_navbtn {
+    width: 28px;
+    height: 30px;
+    border: none;
+    font-size: 16px;
+    line-height: 34px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.todaybtn {
+    width: 75px;
+    border-left: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+.tempCal_main{
+    width:500px;
+    height: auto;
+    position: absolute;
+    top: 150px;
+    margin: 0px 50px 0px 50px;
+}
+.tempCal_days {
+    display: flex;
+    margin: 25px 0 10px;
+}
+.tempCal_day {
+    width: calc(100% / 7);
+    text-align: center;
+}
+.tempCal_dates {
+    display: flex;
+    flex-flow: row wrap;
+    line-height: 20px;
+    background-color: rgba(86, 128, 235, 0.2);
+    border-top: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+.tempCal_date {
+    width: calc(100% / 7);
+    height: calc(100% / 6);
+    padding: 25px 0px;
+    text-align: center;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #333333;
+}
+.tempCal_date2 {
+    width: calc(100% / 7);
+    height: calc(100% / 6);
+    padding: 25px 0px;
+    text-align: center;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #333333;
+    background-color: #FFEC9A;
+}
+.other{
+    opacity: 0.3;
+}
+.sel {
+    position: relative;
+    background-color: rgb(253, 55, 55);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.tempCal_date:nth-child(7n + 1) {
+  color: #D13E3E;
+}

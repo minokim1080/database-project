@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+*{
+    font-family: 'Noto Sans KR';
+}
+#tempLoc_body {
+    width: 100%;
+    height: 100%;
+    background-color: #5680EB;
+}
+.tempLoc_map {
+    width: 500px;
+    height: 650px;
+    background-color: #FFFFFF;
+    text-align: center;
+    border-radius: 15px;
+}
+.tempLoc_header {
+    width: 400px;
+    height: 100px;
+    padding: 0px;
+}
+.tempLoc_header h1{
+    width: 400px;
+    height: 40px;
+    padding: 10px;
+}
+.tempLoc_header button{
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    padding: 5px;
+}
+.tempLoc_ment{
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    padding: 5px;
+}
+.tempLoc_sel{
+    width: 105px;
+    height: 40px;
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid #333333;
+}
+.tempLoc_main{
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+}
+#tempLoc_img1{
+    width: 35px; height: auto;
+    position: absolute; top: 227px; left: 189px;
+}
+#tempLoc_img2{
+    width: 50px; height: auto;
+    position: absolute; top: 232px; left: 139px;
+}
+#tempLoc_img3{
+    width: 140px; height: auto;
+    position: absolute; top: 165px; left: 130px;
+    z-index: 1000;
+}
+#tempLoc_img4{
+    width: 168px; height: auto;
+    position: absolute; top: 138px; left: 216px;
+    z-index:2;
+}
+#tempLoc_img5{
+    width: 40px; height: auto;
+    position: absolute; top: 334px; left: 216px;
+}
+#tempLoc_img6{
+    width: 116px; height: auto;
+    position: absolute; top: 286px; left: 141px;
+}
+#tempLoc_img7{
+    width: 105px; height: auto;
+    position: absolute; top: 269px; left: 228px;
+}
+#tempLoc_img8{
+    width: 33px; height: auto;
+    position: absolute; top: 382px; left: 310px;
+}
+#tempLoc_img9{
+    width: 134px; height: auto;
+    position: absolute; top: 273px; left: 271px;
+}
+#tempLoc_img10{
+    width: 128px; height: auto;
+    position: absolute; top: 372px; left: 159px;
+}
+#tempLoc_img11{
+    width: 37px; height: auto;
+    position: absolute; top: 465px; left: 180px;
+}
+#tempLoc_img12{
+    width: 200px; height: auto;
+    position: absolute; top: 445px; left: 75px;
+}
+#tempLoc_img13{
+    width: 32px; height: auto;
+    position: absolute; top: 405px; left: 352px;
+}
+#tempLoc_img14{
+    width: 40px; height: auto;
+    position: absolute; top: 432px; left: 337px;
+}
+#tempLoc_img15{
+    width: 107px; height: auto;
+    position: absolute; top: 390px; left: 260px;
+}
+#tempLoc_img16{
+    width: 70px; height: auto;
+    position: absolute; top: 585px; left: 194px;
+}
