@@ -4,21 +4,34 @@
     <head>
         {% block title %}로그인{% endblock %}
     </head>
-    <body>
+    {% block bodyid %}login_body{% endblock %}
         {% block content %}
         <form method="post">
 		{{ form.csrf_token }}
             <div class="login_box box1">
-		        <img src="{{ url_for('static', filename='img/login/login_user.png') }}" width="25px" height="25px">
+		        <img src="{{ url_for('static', filename='img/login/login_user.png') }}">
                 {{form.user_id(class="login_form", placeholder="아이디")}}
             </div>
             <div class="login_box box2">
-                <img src="{{ url_for('static', filename='img/login/login_padlock.png') }}" width="25px" height="25px">
+                <img src="{{ url_for('static', filename='img/login/login_padlock.png') }}">
                 {{form.password(class="login_form", placeholder="비밀번호")}}
             </div>
-                <button type="submit" class="login_btn btn1">
+            <div class="login_error">
+                {% if form.user_id.errors %}
+                    {{form.user_id.errors.0}}
+                {% endif %}
+                {% if form.password.errors %}
+                    {{form.password.errors.0}}
+                {% endif %}
+            </div>
+            <!-- <a href="{{ url_for('select.selection') }}">
+                <button type="button" class="login_btn btn1">
                     로 그 인
                 </button>
+	    </a> -->
+             <button type="submit" class="login_btn btn1">
+                로 그 인
+            </button>
             <div class="login_or">or</div>
 	        <a href="{{ url_for('auth.signup')}}">
                 <button type="button" class="login_btn btn2">

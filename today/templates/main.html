@@ -18,17 +18,6 @@
         </a>
         
         <script>
-            var imgNum = Math.floor(Math.random()*(7-1));
-            var imgUrl1 = "url_for('static', filename='img/main/main_";
-            var imgUrl2 = ".jpg')";
-            var imgUrl = "{" + "{" + imgUrl1 + String(imgNum) + imgUrl2 + "}" + "}";
-            console.log(imgUrl);
-            function imgChange(){ //배경 이미지 변경 메소드
-               const introImg = document.getElementById("main_bg");
-               introImg.setAttribute('src', imgUrl );
-               setTimeout(imgChange(), 4000); //시간 설정
-           }
-                
         </script>
     </body>
 </html>
