@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+*{
+    font-family: 'Noto Sans KR';
+}
+
+/* location */
+/*selectColor*/
+.color_body{
+    position: relative;
+}
+.color_form{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+} 
+.color_title {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.color_imgTop{
+    position: absolute;
+    top: 20px;
+    left: 190px;
+}
+.color_frameMale{
+    position: absolute;
+    top: 180px;
+    left: 105px;    
+}
+.color_frameFemale{
+    position: absolute;
+    top: 180px;
+    left: 95px;    
+}
+.color_btn{
+    position: absolute;
+    top: 450px;
+    left: 100px;
+}
+
+/* style */
+/*selectColor*/
+#color_body{
+    width: 100%;
+    height: 100%;
+    background-color: #5680EB;
+}
+.color_form {
+    width: 450px;
+    height: 550px;
+    padding: 30px, 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+    border-radius: 15px;
+}
+.color_title {
+    box-sizing: border-box;
+    width: 400px;
+    height: 50px;
+    text-align: center;
+    font-size: 20pt;
+}
+.color_imgTop{
+    display: block;
+    width: 70px;
+    height: 70px;
+    opacity: 70%;
+}
+.color_frameMale{
+    border-radius: 5px;
+    padding: 45px 40px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px rgb(177, 177, 177);
+    opacity: 80%;
+}
+.color_frameFemale{
+    border-radius: 5px;
+    padding: 45px 25px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px rgb(177, 177, 177);
+    opacity: 80%;
+}
+.color_colorBox{
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    margin: 5px;
+}
+.color_colors{
+    width: 30px;
+    height: 30px;
+    border: 1px solid black; 
+}
+.color_colorBox label{
+    display: block;
+    font-size: small;
+    font-weight: 300;
+}
+.color_btn{
+    display:inline;
+    width:250px;
+    height: 60px;
+    background: linear-gradient(125deg,#c4eaf5,#7b6cee,#c7d3f3);
+    background-position: left;
+    background-size: 200%;
+    color:white;
+    text-decoration-line: none;
+    font-size: large;
+    font-weight: bold;
+    border:none;
+    cursor:pointer;
+    transition: 0.4s;
+    border-radius: 5px;
+}

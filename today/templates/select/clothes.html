@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/clothes.css">
+    <title>clothes</title>
+</head>
+<body id="clothes_body">
+    <div class="clothes_frame">
+        <h1 class="clothes_title">코디가 추천되었습니다!</h1>     
+        <div id="clothes_slideShow">
+            <ul class="clothes_slides">
+                <li>
+                    <!-- 샘플 이미지 -->
+                    <img src="img/clothes/top.jpg" alt="">
+                    <img src="img/clothes/bottom.jpg" alt="">
+                    <p>상의 및 하의</p>
+                </li>
+                <li>
+                    <img class="clothes_outer" src="img/clothes/outer.jpg" alt="">
+                    <p>아우터</p>
+                </li>
+            </ul>
+        </div>
+        <p class="clothes_controller">
+            <!-- &lang: 왼쪽 방향 화살표
+            &rang: 오른쪽 방향 화살표 -->
+            <span class="clothes_prev">&lang;</span>
+            <span class="clothes_next">&rang;</span>
+        </p>
+
+        <button class="clothes_retryBtn" type="button">다시 추천 받기</button>
+    </div>
+    
+    
+</body>
+<script src="JS/clothes_slideShow.js"></script>
+</html>

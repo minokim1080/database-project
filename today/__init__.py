@@ -13,7 +13,11 @@ def create_app():
 
     #ORM
     db.init_app(app)
-    migrate.init_app(app, db)
+    with app.app_context():
+        if db.engine.url.drivername == 'sqlite':
+            migrate.init_app(app, db, render_as_batch=True)
+        else:    
+            migrate.init_app(app, db, compare_type=True)
     from . import models
 
     #블루프린트
