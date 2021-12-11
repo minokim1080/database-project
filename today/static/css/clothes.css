@@ -39,7 +39,12 @@
 .clothes_retryBtn{
     position: absolute;
     bottom: 10px;
-    left: 108px;
+    left: 43px;
+}
+.clothes_decisionBtn{
+    position: absolute;
+    bottom: 10px;
+    left: 225px;
 }
 
 /* style */
@@ -129,8 +134,8 @@
 .clothes_next:hover{
     transform: translate(2px);
 }
-.clothes_retryBtn{
-    width: 200px;
+.clothes_retryBtn, .clothes_decisionBtn{
+    width: 150px;
     height: 50px;
     background: linear-gradient(125deg,#a0eedd,#4970f1,#c7f3e9);
     background-position: left;
@@ -145,3 +150,21 @@
     display:inline;
     border-radius: 5px;
 }
+.clothes_decisionBtn{
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(125deg,#4970f1,#c7f3e9,#a0eedd);
+    background-position: left;
+    background-size: 200%;
+    color:white;
+    text-decoration-line: none;
+    font-size: large;
+    font-weight: bold;
+    border:none;
+    cursor:pointer;
+    transition: 0.4s;
+    display:inline;
+    border-radius: 5px;
+}
+
+

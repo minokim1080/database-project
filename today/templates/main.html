@@ -7,7 +7,7 @@
         <title>main</title>
         
     </head>
-    <body><!-- 페이지 로드하면 배경 이미지 변경 함수 실행 -->
+    <body onload="imgChange()"><!-- 페이지 로드하면 배경 이미지 변경 함수 실행 -->
         <a href="{{ url_for('auth.login')}}">
             <div class="main_imgbox">
                 <img src="{{ url_for('static', filename='img/main/main_1.jpg') }}" id="main_bg">
@@ -18,6 +18,13 @@
         </a>
         
         <script>
+            function imgChange(){
+                var imgNum = Math.floor(Math.random()*(7-1));
+                var imgsrc = "/static/img/main/main_" + String(imgNum) + ".jpg";
+                var img = document.getElementById("main_bg");
+                img.src = imgsrc;
+                setTimeout(imgChange, 4000);
+            }
         </script>
     </body>
 </html>

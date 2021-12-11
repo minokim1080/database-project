@@ -4,43 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/color.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/color.css') }}"/>
     <title>color</title>
 </head>
 <body id="color_body">
-    <form class="color_form" name="color" action="" method="POST">
+    <form class="color_form" name="color" action="" method="post">
+	    {{ form.csrf_token }}
         <h1 class="color_title">원하는 컬러를 선택해주세요</h1>
-        <img src="img/color/clothes.png" class="color_imgTop">
+	<img src="{{ url_for('static', filename='img/color/clothes.png') }}" class="color_imgTop">
         <div class="color_frameFemale">
             <div class="color_colorBox">
-                <input class="color_colors" type="image" id="white" alt="white" src="img/color/white.jpg">
-                <label for="grey">흰색</label>
+		    <img id="white" alt="white" src="{{ url_for('static', filename='img/color/white.jpg') }}">
+                <label for="white">흰색</label>
             </div>
             <div class="color_colorBox">
-                <input class="color_colors" type="image" id="beige" alt="beige" src="img/color/beige.jpg">
-                <label for="grey">베이지</label>
+		    <img id="beige" alt="beige" src="{{ url_for('static', filename='img/color/beige.jpg') }}">
+                <label for="beige">베이지</label>
             </div>
             <div class="color_colorBox">
-                <input class="color_colors" type="image" id="grey" alt="grey" src="img/color/grey.jpg">
+		    <img id="grey" alt="grey" src="{{ url_for('static', filename='img/color/grey.jpg') }}">
                 <label for="grey">회색</label>
             </div>
             <br>
             <br>
             <div class="color_colorBox">
-                <input class="color_colors" type="image" id="green" alt="green" src="img/color/green.jpg">
-                <label for="grey">초록</label>
+		    <img id="green" alt="green" src="{{ url_for('static', filename='img/color/green.jpg') }}">
+                <label for="green">초록</label>
             </div>
             <div class="color_colorBox">
-                <input class="color_colors" type="image" id="blue" alt="blue" src="img/color/blue.jpg">
-                <label for="grey">파랑</label>
+		    <img id="blue" alt="blue" src="{{ url_for('static', filename='img/color/blue.jpg') }}">
+                <label for="blue">파랑</label>
             </div>
             <div class="color_colorBox">
-                <input class="color_colors" type="image" id="navy" alt="navy" src="img/color/navy.jpg">
-                <label for="grey">남색</label>
+		    <img id="navy" alt="navy" src="{{ url_for('static', filename='img/color/navy.jpg') }}">
+                <label for="navy">남색</label>
             </div>
             <div class="color_colorBox">
-                <input class="color_colors" type="image" id="black" alt="black" src="img/color/black.jpg">
-                <label for="grey">검정</label>
+		    <img id="black" alt="black" src="{{ url_for('static', filename='img/color/black.jpg') }}">
+                <label for="black">검정</label>
+            </div>
+            <br>
+            <br>
+            <div class="color_selectColor">
+                <label for="selectColor"></label>
+		<select id="selectColor" name="color" value="{{ form.color.data or ''}}">
+                    <option value="">----------선택----------</option>
+                    <option value="하양">흰색</option>
+                    <option value="베이지">베이지</option>
+                    <option value="회색">회색</option>
+                    <option value="초록">초록</option>
+                    <option value="파랑">파랑</option>
+                    <option value="남색">남색</option>
+                    <option value="검정">검정</option>
+                </select>
             </div>
         </div>        
         

@@ -21,10 +21,11 @@ def create_app():
     from . import models
 
     #블루프린트
-    from .views import main_views,login_views, auth_views, select_views
+    from .views import main_views,login_views, auth_views, select_views, result_views
     app.register_blueprint(main_views.bp)
     app.register_blueprint(login_views.bp)
     app.register_blueprint(auth_views.bp)
     app.register_blueprint(select_views.bp)
+    app.register_blueprint(result_views.bp)
 
     return app

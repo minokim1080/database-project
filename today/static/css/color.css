@@ -4,7 +4,6 @@
 }
 
 /* location */
-/*selectColor*/
 .color_body{
     position: relative;
 }
@@ -27,8 +26,8 @@
 }
 .color_frameMale{
     position: absolute;
-    top: 180px;
-    left: 105px;    
+    top: 170px;
+    left: 90px;    
 }
 .color_frameFemale{
     position: absolute;
@@ -37,12 +36,11 @@
 }
 .color_btn{
     position: absolute;
-    top: 450px;
+    top: 465px;
     left: 100px;
 }
 
 /* style */
-/*selectColor*/
 #color_body{
     width: 100%;
     height: 100%;
@@ -71,14 +69,14 @@
 }
 .color_frameMale{
     border-radius: 5px;
-    padding: 45px 40px;
+    padding: 35px 40px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 20px rgb(177, 177, 177);
     opacity: 80%;
 }
 .color_frameFemale{
     border-radius: 5px;
-    padding: 45px 25px;
+    padding: 30px 25px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 20px rgb(177, 177, 177);
     opacity: 80%;
@@ -93,6 +91,11 @@
     width: 30px;
     height: 30px;
     border: 1px solid black; 
+}
+.color_colorBox img{
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
 }
 .color_colorBox label{
     display: block;
@@ -114,4 +117,18 @@
     cursor:pointer;
     transition: 0.4s;
     border-radius: 5px;
+}
+.color_selectColor select{
+    display: inline-block;
+    width: 170px;
+    height: 35px;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    padding: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: none;
+    border: 2px solid #adadad;
 }

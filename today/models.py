@@ -16,4 +16,6 @@ class Cloth(db.Model):
     cloth_type = db.Column(db.String(255), nullable=False)
     fit = db.Column(db.String(255), nullable=False)
     color = db.Column(db.String(255), nullable=False)
+    gender = db.Column(db.String(255), nullable=False)
+    img = db.Column(db.String(255), nullable=False)
 

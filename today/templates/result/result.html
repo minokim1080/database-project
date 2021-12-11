@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/clothes.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/clothes.css') }}">
     <title>clothes</title>
 </head>
 <body id="clothes_body">
@@ -14,12 +14,12 @@
             <ul class="clothes_slides">
                 <li>
                     <!-- 샘플 이미지 -->
-                    <img src="img/clothes/top.jpg" alt="">
-                    <img src="img/clothes/bottom.jpg" alt="">
+		    <img src="{{ url_for('static', filename=top) }}" alt="">
+		    <img src="{{ url_for('static', filename=bottom) }}" alt="">
                     <p>상의 및 하의</p>
                 </li>
                 <li>
-                    <img class="clothes_outer" src="img/clothes/outer.jpg" alt="">
+			<img class="clothes_outer" src="{{ url_for('static', filename=outer) }}" alt="">
                     <p>아우터</p>
                 </li>
             </ul>
@@ -30,11 +30,15 @@
             <span class="clothes_prev">&lang;</span>
             <span class="clothes_next">&rang;</span>
         </p>
-
+	<a href="{{ url_for('result.result') }}">
         <button class="clothes_retryBtn" type="button">다시 추천 받기</button>
+	</a>
+	<a href="{{ url_for('result.final') }}">
+	<button class="clothes_decisionBtn" type="button">추천 확정하기</button>
+	</a>
     </div>
     
     
 </body>
-<script src="JS/clothes_slideShow.js"></script>
+<script src="{{ url_for('static', filename='js/clothes_slideShow.js') }}"></script>
 </html>

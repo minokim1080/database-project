@@ -64,6 +64,9 @@ def login():
             return render_template('auth/login.html', form=form)
         if error is None:
             session.clear()
-            session['user_id']= user.id
+            session['id']= user.id
+            session['gender']= user.gender
+            session['bmi']= user.bmi
+            session['color'] = '없음'
             return redirect(url_for('select.selection'))
     return render_template('auth/login.html', form=form)

@@ -15,4 +15,5 @@ class UserLoginForm(FlaskForm):
     user_id = StringField('ID', validators=[DataRequired('아이디는 필수 입력 항목입니다.')])
     password = PasswordField('PW', validators=[DataRequired('비밀번호는 필수 입력 항목입니다.')])
 
-
+class ColorForm(FlaskForm):
+    color = StringField('컬러', validators=[DataRequired()])

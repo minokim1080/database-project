@@ -4,7 +4,7 @@ from werkzeug.utils import redirect
 
 from today import db
 from today.forms import UserCreateForm
-from today.models import User
+from today.models import User, Cloth
 
 bp = Blueprint('main', __name__, url_prefix='/')
 

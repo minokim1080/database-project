@@ -267,32 +267,12 @@ body{
     left: 50%;
     transform: translate(-50%, 0%);
 }
-/* tempCal */
-.tempLoc_map{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+
+/* tempCal->tempCal.css */
+
+/* tempLoc->tempLoc.css */
+
+/* selectCheck */
+#check_body{
+    background-color: #FFEC9A;
 }
-.tempLoc_header h1{
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-}
-.tempLoc_ment{
-    position: absolute;
-    top: 80px;
-    left: 10px;
-}
-.tempLoc_sel{
-    position: absolute;
-    top: 74px;
-    left: 128px;
-}
-.tempLoc_header button{
-    position: absolute;
-    top: 80px;
-    right: 10px;
-}
-/* tempLoc */
