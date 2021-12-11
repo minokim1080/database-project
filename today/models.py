@@ -18,4 +18,4 @@ class Cloth(db.Model):
     color = db.Column(db.String(255), nullable=False)
     gender = db.Column(db.String(255), nullable=False)
     img = db.Column(db.String(255), nullable=False)
-
+    url = db.Column(db.String(255), nullable=False)

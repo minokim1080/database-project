@@ -27,10 +27,13 @@ def result():
     brown = Cloth.query.filter(Cloth.color=='갈색').all()
     top_box =[]
     top_name= []
+    top_url=[]
     bottom_box =[]
     bottom_name=[]
+    bottom_url=[]
     outer_box =[]
     outer_name=[]
+    outer_url=[]
     if session['bmi'] >=23.5 and session['gender'] == "남자" :
         if session['color'] == "회색":
             box = beige + white + black + green + grey
@@ -38,20 +41,26 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
                     top_box = top_box + [img]
                     top_name = top_name + [name]
+                    top_url = top_url + [url]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
+                    outer_url = outer_url + [url]
 
             top_item = random.randrange(0,len(top_box))
             bottom_item = random.randrange(0,len(bottom_box))
@@ -65,6 +74,10 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
+
             
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
         
@@ -74,18 +87,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url + [url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url + [url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -101,6 +120,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -110,18 +132,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -137,6 +165,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -146,18 +177,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -173,6 +210,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -182,18 +222,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -209,6 +255,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -218,18 +267,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -245,6 +300,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -254,18 +312,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -281,6 +345,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -292,18 +359,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -319,6 +392,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -328,18 +404,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -355,6 +437,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -364,18 +449,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -391,6 +482,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -400,18 +494,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -427,6 +527,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -436,18 +539,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -463,6 +572,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -472,18 +584,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -499,6 +617,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -508,18 +629,24 @@ def result():
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -535,6 +662,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -545,18 +675,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -572,6 +708,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -581,18 +720,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -608,6 +753,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -617,18 +765,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -644,6 +798,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -653,18 +810,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -680,6 +843,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -689,18 +855,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -716,6 +888,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -725,18 +900,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -752,6 +933,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -761,18 +945,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -788,6 +978,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -797,18 +990,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -824,6 +1023,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -834,18 +1036,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -861,6 +1069,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -870,18 +1081,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -897,6 +1114,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -906,18 +1126,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -933,6 +1159,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -942,18 +1171,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -969,6 +1204,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -978,18 +1216,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -1005,6 +1249,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -1014,18 +1261,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -1041,6 +1294,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -1050,18 +1306,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -1077,6 +1339,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -1086,18 +1351,24 @@ def result():
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    bottom_url = bottom_url +[url]
                     bottom_box = bottom_box + [img]
                     bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
+                    url = box[i].url
+                    outer_url = outer_url +[url]
                     outer_box = outer_box + [img]
                     outer_name = outer_name + [name]
 
@@ -1113,6 +1384,9 @@ def result():
             session['top_name'] = top_name[top_item]
             session['bottom_name'] = bottom_name[bottom_item]
             session['outer_item'] = outer_name[outer_item]
+            session['top_url'] = top_url[top_item]
+            session['bottom_url'] = bottom_url[bottom_item]
+            session['outer_url'] = outer_url[outer_item]
 
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
@@ -1125,4 +1399,8 @@ def final():
     top_name = session['top_name']
     bottom_name = session['bottom_name']
     outer_name = session['outer_item']
-    return render_template('result/final.html', top=top, bottom=bottom, outer=outer, top_name=top_name, bottom_name=bottom_name, outer_name=outer_name)
+    top_url= session['top_url']
+    bottom_url = session['bottom_url']
+    outer_url = session['outer_url']
+
+    return render_template('result/final.html', top=top, bottom=bottom, outer=outer, top_name=top_name, bottom_name=bottom_name, outer_name=outer_name, top_url=top_url, bottom_url=bottom_url, outer_url=outer_url)
