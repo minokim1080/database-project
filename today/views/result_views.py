@@ -37,6 +37,16 @@ def result():
     if session['bmi'] >=23.5 and session['gender'] == "남자" :
         if session['color'] == "회색":
             box = beige + white + black + green + grey
+            bottom_color = grey
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='남자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0,len(box)):
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -45,15 +55,7 @@ def result():
                     top_box = top_box + [img]
                     top_name = top_name + [name]
                     top_url = top_url + [url]
-
-                elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
-                    bottom_url = bottom_url + [url]
-
+                    
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
                     img = box[i].img
@@ -83,6 +85,16 @@ def result():
         
         elif session['color'] =="베이지":
             box = pink + grey + green + red + orange + brown + white + beige
+            bottom_color = beige
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='남자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0,len(box)):
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -91,14 +103,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url + [url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -128,6 +132,16 @@ def result():
 
         elif session['color'] =="검정":
             box = grey + brown + green + red + blue + navy+ white + black
+            bottom_color = black
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='남자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -136,14 +150,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -173,6 +179,16 @@ def result():
 
         elif session['color'] =="남색":
             box = black + beige + blue + yellow
+            bottom_color = navy
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='남자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -181,14 +197,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -218,6 +226,16 @@ def result():
 
         elif session['color'] =="파랑":
             box = navy + blue + black + beige + pink + white + grey + yellow
+            bottom_color = blue
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='남자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0,len(box)):
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -226,14 +244,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -263,6 +273,16 @@ def result():
 
         elif session['color'] =="갈색":
             box = beige + navy + green
+            bottom_color = brown
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='남자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -271,14 +291,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -355,6 +367,16 @@ def result():
     elif session['bmi'] < 23.5 and session['gender'] == "남자" :
         if session['color'] == "회색":
             box = beige + white + black + green + grey
+            bottom_color = grey
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='남자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0,len(box)):
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -363,14 +385,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -400,6 +414,16 @@ def result():
 
         elif session['color'] =="베이지":
             box = pink + grey + green + red + orange + brown + white + beige
+            bottom_color = beige
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='남자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0,len(box)):
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -408,14 +432,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -445,6 +461,16 @@ def result():
 
         elif session['color'] =="검정":
             box = grey + brown + green + red + blue + navy+ white + black
+            bottom_color = black
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='남자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -453,14 +479,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -490,6 +508,16 @@ def result():
 
         elif session['color'] =="남색":
             box = black + beige + blue + yellow
+            bottom_color = navy
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='남자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -498,14 +526,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -535,6 +555,16 @@ def result():
 
         elif session['color'] =="파랑":
             box = navy + blue + black + beige + pink + white + grey + yellow
+            bottom_color = blue
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='남자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0,len(box)):
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -543,14 +573,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -580,6 +602,16 @@ def result():
 
         elif session['color'] =="갈색":
             box = beige + navy + green
+            bottom_color = brown
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='남자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -588,14 +620,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '남자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -671,6 +695,16 @@ def result():
     elif session['bmi'] >=23.5 and session['gender'] == "여자" :
         if session['color'] == "회색":
             box = beige + white + black + green + grey
+            bottom_color = grey
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0,len(box)):
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -679,14 +713,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -716,6 +742,16 @@ def result():
 
         elif session['color'] =="베이지":
             box = pink + grey + green + red + orange + brown + white + beige
+            bottom_color = beige
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0,len(box)):
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -724,14 +760,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -761,6 +789,16 @@ def result():
 
         elif session['color'] =="검정":
             box = grey + brown + green + red + blue + navy+ white + black
+            bottom_color = black
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -769,14 +807,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -806,6 +836,16 @@ def result():
 
         elif session['color'] =="남색":
             box = black + beige + blue + yellow
+            bottom_color = navy
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -814,14 +854,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -851,6 +883,16 @@ def result():
 
         elif session['color'] =="파랑":
             box = navy + blue + black + beige + pink + white + grey + yellow
+            bottom_color = blue
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0,len(box)):
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -859,14 +901,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -896,6 +930,16 @@ def result():
 
         elif session['color'] =="하양":
             box = pink + green + blue + yellow + black
+            bottom_color = white
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -904,14 +948,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -941,6 +977,16 @@ def result():
 
         elif session['color'] =="초록":
             box = grey+ beige + white
+            bottom_color = green
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='오버' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -949,14 +995,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='오버' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -1032,6 +1070,16 @@ def result():
     elif session['bmi'] < 23.5 and session['gender'] == "여자" :
         if session['color'] == "회색":
             box = beige + white + black + green + grey
+            bottom_color = grey
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0,len(box)):
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -1040,14 +1088,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -1077,6 +1117,16 @@ def result():
 
         elif session['color'] =="베이지":
             box = pink + grey + green + red + orange + brown + white + beige
+            bottom_color = beige
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0,len(box)):
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -1085,14 +1135,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -1122,6 +1164,16 @@ def result():
 
         elif session['color'] =="검정":
             box = grey + brown + green + red + blue + navy+ white + black
+            bottom_color = black
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -1130,14 +1182,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -1167,6 +1211,16 @@ def result():
 
         elif session['color'] =="남색":
             box = black + beige + blue + yellow
+            bottom_color = navy
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -1175,14 +1229,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -1212,6 +1258,16 @@ def result():
 
         elif session['color'] =="파랑":
             box = navy + blue + black + beige + pink + white + grey + yellow
+            bottom_color = blue
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0,len(box)):
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -1220,14 +1276,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -1257,6 +1305,16 @@ def result():
 
         elif session['color'] =="하양":
             box = pink + green + blue + yellow + black
+            bottom_color = white
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -1265,14 +1323,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
@@ -1302,6 +1352,16 @@ def result():
 
         elif session['color'] =="초록":
             box = grey+ beige + white
+            bottom_color = green
+            for i in range(0,len(bottom_color)):
+                if bottom_color[i].gender =='여자' and bottom_color[i].fit =='레귤러' and bottom_color[i].cloth_type == '하의':
+                    name = bottom_color[i].classification
+                    img = bottom_color[i].img
+                    url = bottom_color[i].url
+                    bottom_box = bottom_box + [img]
+                    bottom_name = bottom_name + [name]
+                    bottom_url = bottom_url + [url]
+
             for i in range(0, len(box)):
                 if box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '상의':
                     name = box[i].classification
@@ -1310,14 +1370,6 @@ def result():
                     top_url = top_url +[url]
                     top_box = top_box + [img]
                     top_name = top_name + [name]
-
-                elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '하의':
-                    name = box[i].classification
-                    img = box[i].img
-                    url = box[i].url
-                    bottom_url = bottom_url +[url]
-                    bottom_box = bottom_box + [img]
-                    bottom_name = bottom_name + [name]
 
                 elif box[i].gender == '여자' and box[i].fit =='레귤러' and box[i].cloth_type == '아우터':
                     name = box[i].classification
