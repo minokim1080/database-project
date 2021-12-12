@@ -1,3 +1,4 @@
+<!-- 카테고리 선택 페이지 / base.html 상속 -->
 <!DOCTYPE html>
 <html>
     {% extends "base.html" %}
@@ -8,6 +9,7 @@
         {% block content %}
             <h2 id="sel_head">카테고리 선택</h2>
             <a href="{{ url_for('select.date') }}">
+            <!-- 날짜 선택 페이지로 이동 -->
                 <div class="sel_catebox" id="sel_tempbox">
                     <div class="sel_catename">기온에 따라</div>
                     <div class="sel_cateinfo">선택한 날짜의 기온에<br>맞는 코디 추천</div>
@@ -15,6 +17,7 @@
                 </div>
             </a>
             <a href="{{ url_for('select.color') }}">
+            <!-- 색상 선택 페이지로 이동 -->
                 <div class="sel_catebox" id="sel_colbox">
                     <div class="sel_catename">색조합에 따라</div>
                     <div class="sel_cateinfo">선택한 상,하의 색에<br>맞는 코디 추천</div>

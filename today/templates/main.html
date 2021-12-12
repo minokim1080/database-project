@@ -1,3 +1,4 @@
+<!-- 첫페이지 / base.html 상속X -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}"/>
         <title>main</title>
-        
     </head>
-    <body onload="imgChange()"><!-- 페이지 로드하면 배경 이미지 변경 함수 실행 -->
+    <body onload="imgChange()"> <!-- 페이지 로드하면 배경 이미지 변경 js 함수 실행 -->
         <a href="{{ url_for('auth.login')}}">
+        <!-- 로그인 페이지로 이동 -->
             <div class="main_imgbox">
                 <img src="{{ url_for('static', filename='img/main/main_1.jpg') }}" id="main_bg">
                 <div class="main_blackbox"></div>
@@ -18,12 +19,12 @@
         </a>
         
         <script>
-            function imgChange(){
-                var imgNum = Math.floor(Math.random()*(7-1))+1;
-                var imgsrc = "/static/img/main/main_" + String(imgNum) + ".jpg";
-                var img = document.getElementById("main_bg");
-                img.src = imgsrc;
-                setTimeout(imgChange, 4000);
+            function imgChange(){ //배경이미지 변경 함수
+                var imgNum = Math.floor(Math.random() * (7 - 1)) + 1; //1~6 사이의 랜덤한 수
+                var imgsrc = "/static/img/main/main_" + String(imgNum) + ".jpg";//이미지 객체의 소스 주소
+                var img = document.getElementById("main_bg");//이미지 객체
+                img.src = imgsrc;//이미지 객체의 소스를 랜덤하게 변경
+                setTimeout(imgChange, 4000);//4초마다 변경
             }
         </script>
     </body>

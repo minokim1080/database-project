@@ -1,3 +1,4 @@
+<!-- 외출 날짜 선택 페이지 / base.html 상속X -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,17 +11,17 @@
     <div class="tempCal_calendar">
         <h1>외출 날짜를 선택해주세요</h1>
         <div class="tempCal_header">
-            <div class="tempCal_nav">
-                <button class="tempCal_navbtn prevbtn" onclick="prevMonth()">&lt;</button>
-                <button class="tempCal_navbtn todaybtn" onclick="goToday()">이번달</button>
-                <button class="tempCal_navbtn nextbtn" onclick="nextMonth()">&gt;</button>
+            <div class="tempCal_nav"> <!-- 달력 nav div -->
+                <button class="tempCal_navbtn prevbtn" onclick="prevMonth()">&lt;</button> <!-- 이전 달로 이동 버튼 -->
+                <button class="tempCal_navbtn todaybtn" onclick="goToday()">이번달</button> <!-- 이번달로 이동 버튼 -->
+                <button class="tempCal_navbtn nextbtn" onclick="nextMonth()">&gt;</button> <!-- 이후 달로 이동 버튼 -->
             </div>
-            <div class="tempCal_yearmonth"></div>
-	    <a href="{{ url_for('select.location') }}">
+            <div class="tempCal_yearmonth"></div> <!-- js에서 현재 연도와 달 입력할 div -->
+	    <a href="{{ url_for('select.location') }}"> <!-- 장소선택 페이지로 이동 -->
                 <button class="tempCal_next">장소선택</button>
             </a>
         </div>
-        <div class="tempCal_main">
+        <div class="tempCal_main"> <!-- 달력 메인파트 -->
             <div class="tempCal_days">
                 <div class="tempCal_day">일</div>
                 <div class="tempCal_day">월</div>
@@ -30,7 +31,7 @@
                 <div class="tempCal_day">금</div>
                 <div class="tempCal_day">토</div>
             </div>
-            <div class="tempCal_dates"></div>
+            <div class="tempCal_dates"></div> <!-- js에서 현재 연도,달에 해당하는 날짜 정보 입력할 div -->
         </div>
     </div>
     <script src="{{ url_for('static', filename='js/tempCal.js') }}"></script>

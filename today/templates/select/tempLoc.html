@@ -1,3 +1,4 @@
+<!-- 외출 장소 선택 페이지 / base.html 상속X -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,7 @@
             <h1>외출 장소를 선택해주세요</h1><br>
             <div class="tempLoc_ment">선택한 장소: </div>
             <select class="tempLoc_sel" onchange="change(this.value)">
+                <!-- 장소 selectbox / content가 바뀌면 value 값 매개로 change() 함수 실행 -->
                 <option value="1" selected>서울</option>
                 <option value="2">인천</option>
                 <option value="3">경기</option>
@@ -32,10 +34,10 @@
             </select>
 	    <a href="{{ url_for('result.result')}}">
 	    	<button type="button">다음으로</button>
-	</a>
+	    </a>
         </div>
         <div class="tempLoc_main">
-            <div class="tempLoc_places">
+            <div class="tempLoc_places"> <!-- 전국 지도 이미지 -->
 		    <img src="{{ url_for('static', filename='img/tempLoc/tempLoc_1.png') }}" id="tempLoc_img1">
 		    <img src="{{ url_for('static', filename='img/tempLoc/tempLoc_2.png') }}" id="tempLoc_img2">
 		    <img src="{{ url_for('static', filename='img/tempLoc/tempLoc_3.png') }}" id="tempLoc_img3">

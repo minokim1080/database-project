@@ -53,18 +53,18 @@ renderCal();
 //--------------------------버튼 이동-------------------------------
 const prevMonth = () => {
     date.setDate(1);
-    date.setMonth(date.getMonth() - 1);
+    date.setMonth(date.getMonth() - 1); //달력에 출력된 달에서 -1씩
     renderCal();
   }
   
   const nextMonth = () => {
     date.setDate(1);
-    date.setMonth(date.getMonth() + 1);
+    date.setMonth(date.getMonth() + 1); //달력에 출력된 달에서 +1씩
     renderCal();
   }
   
   const goToday = () => {
-    date = new Date();
+    date = new Date(); //현재 날짜에 해당하는 달로 이동
     renderCal();
   }
 
