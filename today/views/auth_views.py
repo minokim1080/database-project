@@ -8,6 +8,8 @@ from today.models import User
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
+#회원가입#
+
 @bp.route('/signup/', methods=('GET', 'POST'))
 def signup():
     form = UserCreateForm()
@@ -28,28 +30,10 @@ def signup():
             flash('이미 존재하는 사용자입니다.')
     return render_template('auth/signup.html', form=form)
 
+#로그인#
+
 @bp.route('/login/', methods=('GET', 'POST'))
 def login():
-    #form = UserLoginForm()
-    # if request.method == 'POST' and form.validate_on_submit():
-    #     userid = form['user_id'].data
-    #     userpw = form['password'].data
-    #     user = User.query.filter(User.user_id == userid).first()
-    #     error = None
-    #     if not user:
-    #         form.user_id.errors.append("*존재하지 않는 사용자입니다.")
-    #         error = 1
-    #         return render_template('auth/login.html', form=form)
-    #     elif not check_password_hash(user.password, userpw):
-    #         form.password.errors.append("*비밀번호가 올바르지 않습니다.")
-    #         error = 2
-    #         return render_template('auth/login.html', form=form)
-    #     if error is None:
-    #         session.clear()
-    #         session['user_id']= user.id
-    #         return redirect(url_for('select.selection'))
-    # return render_template('auth/login.html', form=form)
-
     form = UserLoginForm()
     if request.method == 'POST' and form.validate_on_submit():
         error = None

@@ -10,6 +10,8 @@ from today.models import User, Cloth
 
 bp = Blueprint('result', __name__, url_prefix='/result')
 
+#체중과 색깔을 고려한 추천 알고리즘#
+
 @bp.route('/result/', methods=('GET', 'POST'))
 def result():
     red = Cloth.query.filter(Cloth.color=='빨강').all()
@@ -34,6 +36,8 @@ def result():
     outer_box =[]
     outer_name=[]
     outer_url=[]
+
+    #과체중 남자#
     if session['bmi'] >=23.5 and session['gender'] == "남자" :
         if session['color'] == "회색":
             box = beige + white + black + green + grey
@@ -364,6 +368,7 @@ def result():
             return render_template('result/result.html', top=top, bottom=bottom, outer=outer)
 
 
+    #일반, 저체중 남자#
     elif session['bmi'] < 23.5 and session['gender'] == "남자" :
         if session['color'] == "회색":
             box = beige + white + black + green + grey

@@ -8,9 +8,14 @@ from today.models import User
 
 bp = Blueprint('select', __name__, url_prefix='/select')
 
+#선택화면#
+
 @bp.route('/selection/', methods=('GET', 'POST'))
 def selection():
     return render_template('select/selection.html')
+
+
+#색상 선택#
 
 @bp.route('/color/', methods=('GET', 'POST'))
 def color():
@@ -25,10 +30,13 @@ def color():
     else:
         flash('색을 선택해야 합니다')
 
+#날짜 선택#
 
 @bp.route('/date/', methods=('GET', 'POST'))
 def date():
     return render_template('select/tempCal.html')
+
+#장소 선택#
 
 @bp.route('/location/', methods=('GET', 'POST'))
 def location():

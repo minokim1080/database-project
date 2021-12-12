@@ -8,9 +8,7 @@ from today.models import User, Cloth
 
 bp = Blueprint('main', __name__, url_prefix='/')
 
-@bp.route('/hello')
-def hello_pybo():
-    return 'Hello,Pybo!'
+#메인화면#
 
 @bp.route('/')
 def index():
