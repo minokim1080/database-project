@@ -1,4 +1,4 @@
-from flask import Blueprint, url_for, render_template, flash, request, session
+from flask import Blueprint, url_for, render_template, flash, request, session, g
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import redirect
 
@@ -18,11 +18,9 @@ def signup():
         if not user:
             user = User(user_id=form.user_id.data,
                     password=generate_password_hash(form.password1.data),
-                    gender=form.gender.data,
-                    age=form.age.data,
-                    height=form.height.data,
-                    weight=form.weight.data,
-                    bmi=float(form.weight.data/((form.height.data**2)/10000)))
+                    name=form.name.data,
+                    address=form.address.data,
+                    detail_address=form.detail_address.data)
             db.session.add(user)
             db.session.commit()
             return redirect(url_for('main.index'))
@@ -48,9 +46,19 @@ def login():
             return render_template('auth/login.html', form=form)
         if error is None:
             session.clear()
-            session['id']= user.id
-            session['gender']= user.gender
-            session['bmi']= user.bmi
-            session['color'] = '없음'
-            return redirect(url_for('select.selection'))
+            session['user_id']= user.id
+            return redirect(url_for('main.index'))
     return render_template('auth/login.html', form=form)
+
+@bp.route('/logout/')
+def logout():
+    session.clear()
+    return redirect(url_for('main.index'))
+
+@bp.before_app_request
+def load_logged_in_user():
+    user_id = session.get('user_id')
+    if user_id is None:
+        g.user = None
+    else:
+        g.user = User.query.get(user_id)

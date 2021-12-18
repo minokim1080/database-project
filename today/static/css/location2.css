@@ -6,8 +6,8 @@
 /* signup */
 .signup_form {
     position:absolute;
-    top:50%;
-    left:50%;
+    top:40%;
+    left:15%;
     transform: translate(-50%,-50%);
 }
 
@@ -30,31 +30,31 @@
 .signup_checkPw {
     position:absolute;
     top: 170px;
-    left:30px;
+    left: 30px;
 }
 .signup_basicInfo {
     position:absolute;
     top: 220px;
     left:20px;
 }
-.signup_gender {
+.signup_username {
     position:absolute;
-    top: 270px;
+    top: 210px;
     left:30px;
 }
-.signup_age {
+.signup_address {
     position:absolute;
-    top: 310px;
+    top: 250px;
     left:30px;
 }
-.signup_height {
+.signup_address_spc{
     position:absolute;
-    top: 350px;
+    top: 290px;
     left:30px;
 }
-.signup_weight {
+.signup_email {
     position:absolute;
-    top: 390px;
+    top: 330px;
     left:30px;
 }
 .signup_btn{

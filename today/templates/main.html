@@ -1,31 +1,248 @@
-<!-- 첫페이지 / base.html 상속X -->
 <!DOCTYPE html>
-<html>
+<html lang="ko">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}"/>
-        <title>main</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>인싸 개발자</title>
+        <!-- Favicon-->
+	<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+	<link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
     </head>
-    <body onload="imgChange()"> <!-- 페이지 로드하면 배경 이미지 변경 js 함수 실행 -->
-        <a href="{{ url_for('auth.login')}}">
-        <!-- 로그인 페이지로 이동 -->
-            <div class="main_imgbox">
-                <img src="{{ url_for('static', filename='img/main/main_1.jpg') }}" id="main_bg">
-                <div class="main_blackbox"></div>
-                <div id="main_logo">오늘 패션 어때</div>
-                <div id="main_touch">화면을 클릭해주세요.</div>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">인싸 개발자</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			{% if g.user %}
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+				<li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('main.index') }}">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="{{ url_for('auth.logout') }}">로그아웃</a></li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{{ url_for('main.index') }}">All Products</a></li
+>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="{{ url_for('cloth.top') }}" target="_self">Top</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('cloth.bottom') }}"target="_self">Bottom</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('cloth.outer') }}"target="_self">Outer</a></li>
+
+
+			{% else %}
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+			    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ url_for('main.index') }}">Home</a></li>
+			    <li class="nav-item"><a class="nav-link" href="{{ url_for('auth.login') }}">Login</a></li>
+			    <li class="nav-item"><a class="nav-link" href="{{ url_for('auth.signup') }}">Sign up</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				    <li><a class="dropdown-item" href="{{ url_for('main.index') }}">All Products</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+				<li><a class="dropdown-item" href="{{ url_for('cloth.top') }}" target="_self">Top</a></li>
+				<li><a class="dropdown-item" href="{{ url_for('cloth.bottom') }}"target="_self">Bottom</a></li>
+				<li><a class="dropdown-item" href="{{ url_for('cloth.outer') }}"target="_self">Outer</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+		    {% endif %}
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                </div>
             </div>
-        </a>
-        
-        <script>
-            function imgChange(){ //배경이미지 변경 함수
-                var imgNum = Math.floor(Math.random() * (7 - 1)) + 1; //1~6 사이의 랜덤한 수
-                var imgsrc = "/static/img/main/main_" + String(imgNum) + ".jpg";//이미지 객체의 소스 주소
-                var img = document.getElementById("main_bg");//이미지 객체
-                img.src = imgsrc;//이미지 객체의 소스를 랜덤하게 변경
-                setTimeout(imgChange, 4000);//4초마다 변경
-            }
-        </script>
+        </nav>
+        <!-- Header-->
+        <header class="bg-black py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">체크무늬는 더 이상 Naver!</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">개발자를 인싸로 만들어줄 쇼핑몰, 인싸 개발자입니다.</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+			    <img class="card-img-top" src="images/bottom1.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">하늘색 청바지</h5>
+                                    <!-- Product price-->
+                                    39,000원
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">장바구니</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/bottom2.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">진청바지</h5>
+                                    <!-- Product price-->
+                                    29,000원
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">장바구니</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/bottom3.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">검정 청바지</h5>
+                                    <!-- Product price-->
+                                    29,000원
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">장바구니</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/outer1.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">갈색 퍼 패딩</h5>
+                                    <!-- Product price-->
+                                    59,000원
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">장바구니</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/outer2.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">아이보리 퍼 패딩</h5>
+                                    <!-- Product price-->
+                                    59,000원
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">장바구니</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/top1.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">베이지 니트</h5>
+                                    <!-- Product price-->
+                                    19,000원
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">장바구니</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/top2.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">아이보리 니트</h5>
+                                    <!-- Product price-->
+                                    19,000원
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">장바구니</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="images/top3.jpg" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">카키 니트 </h5>
+                                    <!-- Product price-->
+                                    19,000원
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">장바구니</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+	<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
     </body>
 </html>

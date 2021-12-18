@@ -1,24 +1,23 @@
 <!-- 전체 페이지에 상속될 기본적인 틀 / 상속받는 파일에는 본 파일 내용 생략 -->
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- 브라우저 창크기에 맞게 비율 조정 -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-        <title>{% block title %}{% endblock %}</title>
-        <!-- 페이지의 title 입력 블록 -->
-    </head>
-    <body id="{% block bodyid %}{% endblock %}"> <!-- 페이지별 body id명 식별 블록 -->
-        <div class="{% block mainbox %}{% endblock %}"> <!-- 페이지별 mainbox class명 식별 블록 -->
-            <div class="header">
-                <div class="logobox">
-                    <img src="{{ url_for('static', filename='img/login/login_logo.png') }}">
-                </div>
-                <h1>오늘 패션 어때</h1>
-            </div>
-            {% block content %}{% endblock %} <!-- 메인 내용이 들어갈 블록 -->
-        </div>
-        
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- 브라우저 창크기에 맞게 비율 조정 -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>{% block title %}{% endblock %}</title>
+  <!-- 페이지의 title 입력 블록 -->
+</head>
+<body id="{% block bodyid %}{% endblock %}"> <!-- 페이지별 body id명 식별 블록 -->
+<div class="{% block mainbox %}{% endblock %}"> <!-- 페이지별 mainbox class명 식별 블록 -->
+  <div class="header">
+    <div class="logobox">
+    </div>
+    <h1>DB 쇼핑몰</h1>
+  </div>
+  {% block content %}{% endblock %} <!-- 메인 내용이 들어갈 블록 -->
+</div>
+
+</body>
 </html>

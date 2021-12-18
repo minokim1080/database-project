@@ -6,7 +6,7 @@
 #signup_body{
     width: 100%;
     height: 100%;
-    background-color: #5680EB;
+    background-color: #ffffff;
 }
 .signup_form {
     width: 400px;
@@ -98,10 +98,9 @@
     margin-bottom: 40px;
     width:300px;
     height:60px;
-    background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+    background: linear-gradient(125deg,#ffffff,#ffffff,#81ecec);
     background-position: left;
     background-size: 200%;
-    color:white;
     text-decoration-line: none;
     font-size: large;
     font-weight: bold;
@@ -110,3 +109,4 @@
     transition: 0.4s;
     display:inline;
 }
+

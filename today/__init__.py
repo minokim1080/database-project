@@ -1,11 +1,19 @@
 from flask import Flask, request, render_template, redirect
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import MetaData
 
 
-db = SQLAlchemy()
+naming_convention = {
+        "ix": "ix_%(column_0_label)s",
+        "uq": "uq_%(table_name)s_%(column_0_name)s",
+        "ck": "ck_%(table_name)s_%(column_0_name)s",
+        "fk": "fk_%(table_name)s_%)column_0_name)s_%(referred_table_name)s",
+        "pk": "pk_%(table_name)s"
+}
+
+db = SQLAlchemy(metadata=MetaData(naming_convention=naming_convention))
 migrate = Migrate()
-
 
 def create_app():
     app = Flask(__name__)
@@ -21,11 +29,9 @@ def create_app():
     from . import models
 
     #블루프린트
-    from .views import main_views,login_views, auth_views, select_views, result_views
+    from .views import main_views, auth_views, cloth_views
     app.register_blueprint(main_views.bp)
-    app.register_blueprint(login_views.bp)
     app.register_blueprint(auth_views.bp)
-    app.register_blueprint(select_views.bp)
-    app.register_blueprint(result_views.bp)
+    app.register_blueprint(cloth_views.bp)
 
     return app
